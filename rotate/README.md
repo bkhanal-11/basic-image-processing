@@ -44,6 +44,6 @@ cos \alpha && sin \alpha && (1-cos \alpha)*p - sin \alpha * q\\
 \end{bmatrix}
 ```
 
-and we feed in this rotation matrix to affine transformation as dest$(x, y)$ = src$(M_{11}x+M_{12}y+M_{13},M_{21}x+M_{22}y+M_{23})$
+and we feed in this rotation matrix to affine transformation as dest $(x, y)$ = src $(M_{11}x+M_{12}y+M_{13},M_{21}x+M_{22}y+M_{23})$
 
 This updates the new rotated cooridinate (pixel) with the original pixel values.
