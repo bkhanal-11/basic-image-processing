@@ -39,25 +39,26 @@ For a keypoint localization, the main objective is to have a repeatable detectio
 
 1. Harris Detector Formulation
 
-     Change in intensity for a shift $`[u, v]`$ is given as
+Change in intensity for a shift $[u, v]$ is given as
+
 ```math
 E(u,v) = \sum_{x,y} w(x,y) [I(x+u, y+v) - I(x,y)]
 ```   
 
-where $`w(x,y)`$ is a window function (can be a Uniform or Gaussian) which is used to detect corners, $`I(x+u, y+v)`$ is shifted intensity and $`I(x, y)`$ is intensity. The expression above can also be written as
+where $w(x,y)$ is a window function (can be a Uniform or Gaussian) which is used to detect corners, $I(x+u, y+v)$ is shifted intensity and $I(x, y)$ is intensity. The expression above can also be written as
 
 ```math
 E(u,v) = \begin{bmatrix} u && v \end{bmatrix} M \begin{bmatrix} u \\ v \end{bmatrix}
 ```
 
-where $`M`$ is $`2 \times 2`$ auto correlation matrix computed from Image derivatives.
+where $M$ is $2 \times 2$ auto correlation matrix computed from Image derivatives.
 
 
 ```math
 M = \sum_{x,y} w(x,y) \begin{bmatrix} {I_{x}}^2 && I_{x}I_{y} \\ I_{x}I_{y} && {I_{y}}^2 \end{bmatrix}
 ```
 
-where $`I_{x}, I_{y}`$ are derivative of the image w.r.t x and y.
+where $I_{x}, I_{y}$ are derivative of the image w.r.t x and y.
 
 
 **Window Function**
@@ -82,9 +83,9 @@ M = g(\sigma) \ast \begin{bmatrix} {I_{x}}^2 && I_{x}I_{y} \\ I_{x}I_{y} && {I_{
 
 Hence Harris Detector can be summarized in following steps:
 
-1. Image Derivatives ($`I_{x}, I_{y}`$)
+1. Image Derivatives ($I_{x}, I_{y}$)
 
-2. Square of derivatives ($`{I_{x}}^2, {I_{y}}^2`$)
+2. Square of derivatives (${I_{x}}^2, {I_{y}}^2$)
 
 3. Gaussian Filter
 
@@ -119,7 +120,7 @@ L = \sigma^2 (G_{xx}(x,y,\sigma)+G_{yy}(x,y,\sigma))
 DoG = G(x,y,k\sigma) - G(x,y,\sigma)
 ```
 
-where $`G(x,y,\sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{- \frac{x^2 + y^2}{2 \sigma^2}}`$
+where $G(x,y,\sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{- \frac{x^2 + y^2}{2 \sigma^2}}$
 
 ## Feature Description
 
@@ -137,13 +138,13 @@ We need a point descriptor that is invariant and distinctive. Given a key point 
 
 3. To become rotation invariant, rotate the gradient direction and location by keypoint orientation
 
-4. Create array of orientation histogram ($`4 \times 4`$)
+4. Create array of orientation histogram ($4 \times 4$)
 
 5. Put the rotated gradients into their local oriental histogram
 
-6. 8 oriental bins per histogram and a $`4 \times 4`$ histogram array yields $` 8 \times 4 \times 4 = 128`$ numbers
+6. 8 oriental bins per histogram and a $4 \times 4$ histogram array yields $ 8 \times 4 \times 4 = 128$ numbers
 
-7. SIFT descriptor is a length $`128`$ vector which is invariant to rotation and scale
+7. SIFT descriptor is a length $128$ vector which is invariant to rotation and scale
 
 8. We compare each vector from Image A to each vector from Image B to find matching key point
 
@@ -153,7 +154,7 @@ We need a point descriptor that is invariant and distinctive. Given a key point 
 
 - Higher-contrast photo will increase the magnitude of gradient linearly, hence normalize the vector
 
-- Very large image gradient are usually due to unreliable 3D illumination, hence clamp all the values in vector to be $`\leq 0.2`$ (experimentally tested) and normalize again
+- Very large image gradient are usually due to unreliable 3D illumination, hence clamp all the values in vector to be $\leq 0.2$ (experimentally tested) and normalize again
 
 ## Application
 

@@ -16,7 +16,7 @@ Implements data structures which can be accessed sequencially.
 
 ## Associative containers
 
-Implements sorted data structure that can be searched quickly [$`O(log(n))`$ complexity].
+Implements sorted data structure that can be searched quickly [$O(log(n))$ complexity].
 
 - **set**: collection of unique keys, sorted by keys
 - **map**: collection of key-value pairs, sorted by keys, keys are unique

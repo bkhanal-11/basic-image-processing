@@ -24,7 +24,7 @@ The purpose of the vocabulary is to provide a means of comparing images and dist
 
 This is a limited set of the most common visual words found in the training set.
 
-Here, K-Means Clustering method is used to find a pre-defined number of clusters in the complete training set BoW, resulting in a concise Bow vocabulary. Once vocabulary is established, it forms the $`x`$-axis of a histogram which can be used to compare and classify images.
+Here, K-Means Clustering method is used to find a pre-defined number of clusters in the complete training set BoW, resulting in a concise Bow vocabulary. Once vocabulary is established, it forms the $x$-axis of a histogram which can be used to compare and classify images.
 
 #### Step 3: Create BoW Histogram
 
@@ -44,7 +44,7 @@ Generally, the goal in "clustering" is to minimize variance in data given cluste
 
 2. If we knew the group elements, we could get the centers by computing the mean per group.
 
-Best cluster centers are those that minimize Sum of Squared Distance (SSD) between all points and their nearest cluster $`c_{i}`$,
+Best cluster centers are those that minimize Sum of Squared Distance (SSD) between all points and their nearest cluster $c_{i}$,
 
 ```math
 SSD = \sum_{cluster i} \sum_{x \in cluster i} ( x - {c_{i}}^2)
@@ -52,21 +52,21 @@ SSD = \sum_{cluster i} \sum_{x \in cluster i} ( x - {c_{i}}^2)
 
 Hence, k-means clustering can be carried out as follow:
 
-1. Initialize ($`t = 0`$): cluster centers $`c_{1}. c_{2},...,c_{k}`$
+1. Initialize ($t = 0$): cluster centers $c_{1}. c_{2},...,c_{k}$
      - commonly used: random initialization 
      - or greedy choose K to minimize residual
 
-2. Compute $`\delta^{t}`$: assign each point to the closest center
+2. Compute $\delta^{t}$: assign each point to the closest center
      - Typical distance measure:
-          - Euclidean, $`dist(x, x') = x^{T}x`$
-          - Cosine, $`dist(x, x') = \frac{x^{T}x}{||x|| ||x'||}`$
+          - Euclidean, $dist(x, x') = x^{T}x$
+          - Cosine, $dist(x, x') = \frac{x^{T}x}{||x|| ||x'||}$
 
-3. Compute $`c^{t}`$: update cluster centers as the means of points
+3. Compute $c^{t}$: update cluster centers as the means of points
 ```math
 c^{t} = \underset{c}{\mathrm{argmin}} \frac{1}{N} \sum_{i}^{N} \sum_{i}^{k} {\delta_{ij}}^{t}({c_{i}}^{t-1}-x_{j})^2
 ```
 
-4. Update $`t=t+1`$, repeat Step 2 and 3 until $`c^{t}`$ does not change anymore
+4. Update $t=t+1$, repeat Step 2 and 3 until $c^{t}$ does not change anymore
 
 # Term Frequency - Inverse Document Frequency (TF-IDF)
 
@@ -98,7 +98,7 @@ With these calculated, we can calculate the weight of each visual word in each i
 TF-IDF, w(i,j) = TF(i,j) \times IDF(j)
 ```
 
-where $`w(i,j)`$ is the weight of $`i-th`$ visual word (codeword) in image $`j`$.
+where $w(i,j)$ is the weight of $i-th$ visual word (codeword) in image $j$.
 
 # Steps followed for Large Scale Image Search (Attempt 1)
 

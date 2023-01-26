@@ -12,7 +12,7 @@
 
 ### Histogram 
 
-Histogram describes the count of a number for a given data. For example, for image, there is pixel value for every pixel. When normalized, the range of the pixel value is taken as $`0-255`$ for 8 bit system ($`2^8 = 256`$). In the task above, source image is converted into GrayScale and HSV color channels. Then, histogram of RBG color channel and Grayscale channel is plotted.
+Histogram describes the count of a number for a given data. For example, for image, there is pixel value for every pixel. When normalized, the range of the pixel value is taken as $0-255$ for 8 bit system ($2^8 = 256$). In the task above, source image is converted into GrayScale and HSV color channels. Then, histogram of RBG color channel and Grayscale channel is plotted.
 
 ### Functions used
 

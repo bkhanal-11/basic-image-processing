@@ -9,7 +9,7 @@ f[n,m] \ast h[n,m] = \sum_{k = -\infty}^{\infty} \sum_{l = -\infty}^{\infty} f[k
 
 ```
 
-This represents discrete form of integration. For convolution, $`f[n,m]`$ is image and $`h[n,m]`$ is filter (kernel).
+This represents discrete form of integration. For convolution, $f[n,m]$ is image and $h[n,m]$ is filter (kernel).
 
 ### Padding
 
@@ -19,11 +19,11 @@ Everytime a convolution is applied, following problem arises:
 
 2. The second issue is that, when kernel moves over original images, it touches the edge of the image less number of times and touches the middle of the image more number of times and it overlaps also in the middle. So, the corner features of any image or on the edges aren’t used much in the output.
 
-The Zero-padding pads (adds) the input with zeros so that the output size from the convolution is exactly the same as the input size. For example, if zero padding is applied to an input tensor of dimension $`5 \times 5`$ with filter size of $`3 \times 3`$, the input tensor will be incremented by 2 dimensions each direction with '0' as the outer tensor value so that when the convolution is done, the output will be $`5 \times 5`$.
+The Zero-padding pads (adds) the input with zeros so that the output size from the convolution is exactly the same as the input size. For example, if zero padding is applied to an input tensor of dimension $5 \times 5$ with filter size of $3 \times 3$, the input tensor will be incremented by 2 dimensions each direction with '0' as the outer tensor value so that when the convolution is done, the output will be $5 \times 5$.
 
 ### Strides
 
-The strides is the step-size used by the layer to move the filters ($`h[n,m]`$) across the input. Increasing the strides therefore reduces the size of the output tensor. For example, when strides of '2' is applied, the height and width of the output tensor will be half the size of the input tensor.
+The strides is the step-size used by the layer to move the filters ($h[n,m]$) across the input. Increasing the strides therefore reduces the size of the output tensor. For example, when strides of '2' is applied, the height and width of the output tensor will be half the size of the input tensor.
 
 "Stride" is something completely different then width and height of an image; it's a concept related to the logical storage layout (memory addressing) of the image data array on the physical memory accessed by a program, and not to the geometric properties of the image.
 

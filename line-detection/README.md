@@ -15,4 +15,4 @@ Hough Transformation was used for line detection in a video. The following steps
 
 `lines(<output-image>, <point1>, <point2>, <color>, <thickness>, <line-type>)`
 
-The basic idea behind Hough Transformation for line is that every line in cartesian coordinate system can be converted into polar coordinate. Hough Transform keeps track of the intersection between curves of every point in the image. If the number of intersections is above some threshold, then it declares it as a line with the parameters $`\theta , r_\theta `$ of the intersection point.  
+The basic idea behind Hough Transformation for line is that every line in cartesian coordinate system can be converted into polar coordinate. Hough Transform keeps track of the intersection between curves of every point in the image. If the number of intersections is above some threshold, then it declares it as a line with the parameters $\theta , r_\theta$ of the intersection point.  

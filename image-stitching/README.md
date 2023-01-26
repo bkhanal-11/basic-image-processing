@@ -22,7 +22,7 @@ Similar inputs are defined by k-NN as those objects that are clode to one anothe
 d_{minkowski} (p,q) = (\sum_{i=1}^{n} {|p_{i} - q_{i}|}^{a})^{\frac{1}{a}}, a \geqslant 1
 ```
 
-It is a generalized form of finding distance between two points $`p`$ and $`q`$. If $`a = 2`$, it is called **Euclidean Distance**, if $`a = 1`$, it is called **Manhattan Distance** and for $`a = \infty`$, it is called **Chebyshev Distance** which gives distance as the greatest difference between elements i.e.
+It is a generalized form of finding distance between two points $p$ and $q$. If $a = 2$, it is called **Euclidean Distance**, if $a = 1$, it is called **Manhattan Distance** and for $a = \infty$, it is called **Chebyshev Distance** which gives distance as the greatest difference between elements i.e.
 
 ```math
 d_{chev} (p,q) = \underset{i}{\mathrm{max}} |p_{i} - q_{i}|
@@ -32,7 +32,7 @@ d_{chev} (p,q) = \underset{i}{\mathrm{max}} |p_{i} - q_{i}|
 
 RANSAC is an iterative method to estimate parameters of a mathematical model from a set of observed data that contains outliers when outliers are to be accorded no influence on the vlaues of the estimate.
 
-RANSAC fits $`N`$ models using different random sample $`S`$ of the whole available data each time. Then, for ach model it evaluates its performance ($`P`$) (i.e. number of inliers or outliers) and chooses the best one. Least square method can be used to find model parameters. 
+RANSAC fits $N$ models using different random sample $S$ of the whole available data each time. Then, for ach model it evaluates its performance ($P$) (i.e. number of inliers or outliers) and chooses the best one. Least square method can be used to find model parameters. 
 
 ```math
 \underset{\theta}{\mathrm{min}} \sum_{i} (y_{i} - \theta^{T} x_{i})^{2}
